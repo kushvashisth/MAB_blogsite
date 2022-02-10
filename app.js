@@ -2,22 +2,17 @@ var createError = require('http-errors');
 var express = require('express');
 var env = require('dotenv');
 env.config({path: './'});
-// var cookieParser = require('cookie-parser');
-// var logger = require('morgan');
 var passport = require('passport');
 var authenticate = require('./authenticate');
 
 var articleRouter = require('./routes/articleRouter');
-//const uploadRouter = require('./routes/uploadRouter');
-//const favoriteRouter = require('./routes/favoriteRouter');
 
 const mongoose = require('mongoose');
 
 const Articles = require('./models/articles');
-//const Favorites = require('./models/favorite');
 
 const url = process.env.MONGODB_URI;
-console.log(process.env.MONGODB_URI);
+console.log(process.env.MONGODB_URI, 'KKKKKKKK');
 const connect = mongoose.connect(url,{ useNewUrlParser: true,
   useFindAndModify: false,
   useCreateIndex: true,
